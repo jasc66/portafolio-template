@@ -34,7 +34,7 @@ export const heroTopics = [
 
 export const declaracion = {
   eyebrow: "Declaración",
-  lines: ["Diseños", "Soberanos", "Y acciones", "Para la", "Memoria."],
+  lines: ["Diseños", "Soberanos", "Y acciones", "Para", "La memoria."],
 };
 
 export const manifiesto = {

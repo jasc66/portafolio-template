@@ -2,7 +2,7 @@ import { declaracion } from "@/data/site";
 
 // Offsets en zigzag para que el bloque se vea como una escalera irregular
 // en vez de una diagonal uniforme — igual que la referencia.
-const LINE_OFFSETS = ["0vw", "9vw", "4vw", "2vw", "6vw"];
+const LINE_OFFSETS = ["0vw", "22vw", "8vw", "30vw", "0vw"];
 
 export default function Declaracion() {
   return (

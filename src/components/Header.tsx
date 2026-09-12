@@ -34,12 +34,33 @@ export default function Header() {
       >
         {site.name}
       </a>
-      <a
-        href={`mailto:${site.email}`}
-        className="underline-link text-ink transition-colors hover:text-ink-dim"
+      <nav
+        aria-label="Redes y contacto"
+        className="flex items-center gap-6"
       >
-        Contacto
-      </a>
+        <a
+          href={site.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline-link text-ink transition-colors hover:text-ink-dim"
+        >
+          Instagram
+        </a>
+        <a
+          href={`mailto:${site.email}`}
+          className="underline-link text-ink transition-colors hover:text-ink-dim"
+        >
+          Contacto
+        </a>
+        <a
+          href={site.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline-link text-ink transition-colors hover:text-ink-dim"
+        >
+          LinkedIn
+        </a>
+      </nav>
     </header>
   );
 }
