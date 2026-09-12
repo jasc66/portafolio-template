@@ -2,7 +2,10 @@ import { sobreMi } from "@/data/site";
 
 export default function SobreMi() {
   return (
-    <section id="sobre-mi" className="px-6 py-24 md:px-10 md:py-32">
+    <section
+      id="sobre-mi"
+      className="flex min-h-svh flex-col justify-center px-6 py-24 md:px-10 md:py-32"
+    >
       <h2 className="mb-10 font-mono text-xs uppercase tracking-[0.08em] text-ink-dim">
         {sobreMi.heading}
       </h2>

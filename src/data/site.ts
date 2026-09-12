@@ -2,7 +2,7 @@
 // sin tocar los componentes.
 
 export const site = {
-  name: "Nombre Apellido",
+  name: "Alonso Salguero",
   tagline: "¿Qué tan huidizas son las memorias?",
   email: "info@tudominio.co",
   social: {
@@ -16,7 +16,6 @@ export const site = {
 export const nav = [
   { label: "Linktree", href: site.social.linktree, external: true },
   { label: "Archivo", href: "/archivo" },
-  { label: "Manifiesto", href: "#manifiesto" },
   { label: "Intereses", href: "#intereses" },
   { label: "Sobre mí", href: "#sobre-mi" },
 ];
@@ -60,24 +59,24 @@ export const intereses: Interes[] = [
     number: "01",
     title: "Cultura y otras pedagogías",
     words: ["Cultura", "Y otras", "Pedagogías"],
-    image: "/images/interes-1.svg",
-    alt: "Retrato en blanco y negro con textura granulada",
+    image: "/images/interes-1.png",
+    alt: "Dispositivos (laptop, tablet, celular) en blanco y negro con textura granulada",
     href: "/archivo",
   },
   {
     number: "02",
     title: "Memoria, pedagogía y creación",
     words: ["Memoria", "Pedagogía y", "Creación"],
-    image: "/images/interes-2.svg",
-    alt: "Composición abstracta en blanco y negro",
+    image: "/images/interes-2.png",
+    alt: "Íconos de accesibilidad sobre fotografía en blanco y negro con textura granulada",
     href: "/archivo",
   },
   {
     number: "03",
     title: "Soberanía social en la plaza de mercado",
     words: ["Soberanía", "Social en la", "Plaza de mercado"],
-    image: "/images/interes-3.svg",
-    alt: "Silla de plástico vacía en alto contraste",
+    image: "/images/interes-3.png",
+    alt: "Código y logos de tecnologías sobre fotografía en blanco y negro con textura granulada",
     href: "/archivo",
   },
 ];

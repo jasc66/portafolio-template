@@ -9,12 +9,19 @@ export default function Header() {
   useEffect(() => {
     const hero = document.querySelector("[data-hero-section]");
     if (!hero) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
-      { rootMargin: "-75% 0px 0px 0px" }
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
+
+    const checkScroll = () => {
+      const rect = hero.getBoundingClientRect();
+      setVisible(rect.bottom <= 0);
+    };
+
+    checkScroll();
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      window.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
   }, []);
 
   return (

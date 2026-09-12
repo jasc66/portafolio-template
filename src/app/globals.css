@@ -191,3 +191,31 @@ main {
   transform: scaleX(0);
   transform-origin: left;
 }
+
+/* ---------- Tarjetas de Intereses: shuffle de texto + rotación de índice ---------- */
+/* Mecanismo replicado de kevinfonseca.co (colores propios del proyecto, no los de la referencia):
+   cada línea de título se desplaza en X una distancia distinta al hover de toda la tarjeta,
+   y el número índice rota 90°. Se define como clase CSS (no utilidades group-hover) porque
+   el offset de reposo por palabra depende de un valor por-instancia vía --x. */
+.word-shuffle {
+  --hover-x: 0px;
+  transform: translateX(var(--x, 0));
+  transition:
+    transform 0.35s cubic-bezier(0.625, 0.05, 0, 1),
+    color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.group:hover .word-shuffle {
+  transform: translateX(var(--hover-x));
+}
+
+.index-badge {
+  --rotate: 0deg;
+  transform: translate(-50%, -50%) rotate(var(--rotate));
+  transition: transform 0.35s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+.group:hover .index-badge {
+  --rotate: -90deg;
+}

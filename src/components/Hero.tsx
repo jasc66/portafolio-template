@@ -29,7 +29,7 @@ function FrameButton({
 }
 
 export default function Hero() {
-  const [linktree, archivo, manifiesto, intereses, sobreMi] = nav;
+  const [linktree, archivo, intereses, sobreMi] = nav;
 
   return (
     <section
@@ -70,7 +70,6 @@ export default function Hero() {
           <FrameButton href={linktree.href} external={linktree.external}>
             {linktree.label}
           </FrameButton>
-          <FrameButton href={manifiesto.href}>{manifiesto.label}</FrameButton>
           <FrameButton href={intereses.href}>{intereses.label}</FrameButton>
         </div>
 
@@ -78,7 +77,6 @@ export default function Hero() {
           <FrameButton href={linktree.href} external={linktree.external}>
             {linktree.label}
           </FrameButton>
-          <FrameButton href={manifiesto.href}>{manifiesto.label}</FrameButton>
           <FrameButton href={intereses.href}>{intereses.label}</FrameButton>
         </div>
       </div>

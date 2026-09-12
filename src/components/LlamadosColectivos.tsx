@@ -3,7 +3,7 @@ import CollectiveBackground from "@/components/CollectiveBackground";
 
 export default function LlamadosColectivos() {
   return (
-    <section className="relative isolate overflow-hidden border-t border-line bg-bg-raised px-6 py-24 text-accent-on-dark md:px-10 md:py-32">
+    <section className="relative isolate flex flex-col justify-center overflow-hidden border-t border-line bg-bg-raised px-6 py-24 text-accent-on-dark md:px-10 md:py-32">
       <CollectiveBackground />
       <div className="relative z-10">
         <h2 className="mb-12 font-display text-3xl uppercase tracking-[0.03em] text-accent-on-dark md:text-4xl">
