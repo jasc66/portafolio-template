@@ -66,16 +66,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Middle: nombre y rol alineados a la izquierda, no centrados */}
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 py-6">
-        <h1 className="font-poster text-left text-[15vw] uppercase leading-[0.88] tracking-wide text-ink md:text-[9vw]">
+      {/* Middle: nombre y rol centrados para aprovechar el ancho de pantalla */}
+      <div className="mx-auto flex w-full max-w-[95vw] flex-col items-center gap-8 py-6 text-center">
+        <h1 className="font-poster text-[17vw] uppercase leading-[0.88] tracking-wide text-ink md:text-[11.5vw]">
           {site.name}
         </h1>
         <p className="max-w-lg font-mono text-sm uppercase tracking-wider text-ink-dim md:text-base">
           {site.role} — {site.tagline}
         </p>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:max-w-3xl">
+        <div className="mt-6 grid grid-cols-1 gap-6 text-left sm:grid-cols-2 md:max-w-3xl">
           {heroTopics.map((topic) => (
             <div key={topic.label} className="flex max-w-sm flex-col gap-2 border-l border-line pl-4">
               <p className="font-mono text-xs font-semibold uppercase tracking-wider text-ink">
