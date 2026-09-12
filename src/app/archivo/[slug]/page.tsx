@@ -73,21 +73,27 @@ export default async function ArchivoDetalle({
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 text-[11px] uppercase tracking-wider md:px-10">
-        <Link href="/archivo" className="flex items-center gap-2 font-mono font-medium text-ink">
-          <BrandMark initial={site.name.trim().charAt(0).toUpperCase() || "N"} />
-          <span aria-hidden="true">←</span> Volver
-        </Link>
-        <p className="font-mono text-ink-dim">{site.name}</p>
-      </header>
-
-      <main id="main-content" className="min-h-svh px-6 pb-24 pt-32 md:px-10">
-        <p className="mb-6 font-mono text-xs uppercase tracking-[0.08em] text-ink-dim">
+      <header className="fixed inset-x-0 top-0 z-50 flex flex-col gap-3 px-6 py-5 text-[11px] uppercase tracking-wider md:px-10">
+        <div className="flex items-center justify-between">
+          <Link href="/archivo" className="flex items-center gap-2 font-mono font-medium text-ink">
+            <BrandMark initial={site.name.trim().charAt(0).toUpperCase() || "N"} />
+            <span aria-hidden="true">←</span> Volver
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="underline-link font-mono text-ink hover:text-accent">
+              Inicio
+            </Link>
+            <p className="font-mono text-ink-dim">{site.name}</p>
+          </div>
+        </div>
+        <p className="font-mono text-xs uppercase tracking-[0.08em] text-ink-dim">
           Archivo de consulta — {site.role}
         </p>
+      </header>
 
+      <main id="main-content" className="min-h-svh px-6 pb-28 pt-40 md:px-10">
         <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
-          <div>
+          <div className="md:sticky md:top-40 md:self-start">
             <span className="font-display block text-7xl leading-none text-ink md:text-8xl">
               {grupo.number}
             </span>
@@ -109,27 +115,27 @@ export default async function ArchivoDetalle({
             </ul>
           </div>
         </div>
-
-        <nav
-          aria-label="Navegación entre grupos del archivo"
-          className="mt-20 flex items-center justify-between border-t border-line pt-8 font-mono text-xs uppercase tracking-wider text-ink-dim"
-        >
-          {anterior ? (
-            <Link href={`/archivo/${anterior.slug}`} className="underline-link hover:text-ink">
-              ← {anterior.heading}
-            </Link>
-          ) : (
-            <span />
-          )}
-          {siguiente ? (
-            <Link href={`/archivo/${siguiente.slug}`} className="underline-link hover:text-ink">
-              {siguiente.heading} →
-            </Link>
-          ) : (
-            <span />
-          )}
-        </nav>
       </main>
+
+      <nav
+        aria-label="Navegación entre grupos del archivo"
+        className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t border-line bg-bg px-6 py-5 font-mono text-xs uppercase tracking-wider text-ink-dim md:px-10"
+      >
+        {anterior ? (
+          <Link href={`/archivo/${anterior.slug}`} className="underline-link hover:text-ink">
+            ← {anterior.heading}
+          </Link>
+        ) : (
+          <span />
+        )}
+        {siguiente ? (
+          <Link href={`/archivo/${siguiente.slug}`} className="underline-link hover:text-ink">
+            {siguiente.heading} →
+          </Link>
+        ) : (
+          <span />
+        )}
+      </nav>
     </>
   );
 }
