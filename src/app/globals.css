@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f1ea;
+  --bg-raised: #1a1714;
+  --ink: #1a1714;
+  --ink-dim: #5c5650;
+  --line: #1a1714;
+  --accent: #1d3a8f;
+  --accent-on-dark: #5b8cff;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-ink: var(--ink);
+  --color-ink-dim: var(--ink-dim);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-on-dark: var(--accent-on-dark);
+  --font-display: var(--font-mono);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- Fondo animado global (grid ASCII / ruido) ---------- */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#__next,
+body > div:first-child,
+main {
+  position: relative;
+}
+
+/* ---------- Botón "marco": líneas animadas en las 4 esquinas ---------- */
+.frame-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  outline: 1px solid var(--ink);
+  outline-offset: -1px;
+  background-color: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.frame-button.frame-button--dark {
+  background-color: var(--ink);
+  color: var(--accent-on-dark);
+}
+
+.frame-line {
+  position: absolute;
+  background-color: var(--ink);
+  transform-style: preserve-3d;
+}
+
+.frame-button--dark .frame-line {
+  background-color: var(--accent);
+}
+
+.frame-line--top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.frame-line--right {
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scale3d(1, 0, 1);
+  transition: transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) 0.08s;
+}
+
+.frame-line--bottom {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  transform-origin: 100%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) 0.16s;
+}
+
+.frame-line--left {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  transform-origin: top;
+  transform: scale3d(1, 0, 1);
+  transition: transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) 0.24s;
+}
+
+.frame-button:hover .frame-line--top,
+.frame-button:hover .frame-line--right,
+.frame-button:hover .frame-line--bottom,
+.frame-button:hover .frame-line--left {
+  transform: scale3d(1, 1, 1);
+}
+
+/* ---------- Enlace con subrayado retráctil ---------- */
+.underline-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.underline-link:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
