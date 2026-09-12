@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { declaracion } from "@/data/site";
 
-// Offsets en zigzag para que el bloque se vea como una escalera irregular
-// y se reparta por el ancho de la pantalla. En desktop cada línea termina
-// a una distancia distinta del margen derecho; en móvil el escalonado es
-// mucho menor porque una línea ya ocupa casi todo el ancho.
+// Offsets en zigzag para que el bloque se vea como una escalera irregular.
+// Ninguna línea arranca en el margen ni llega al borde derecho: el conjunto
+// queda centrado con aire a ambos lados. En móvil el escalonado es mucho
+// menor porque una línea ya ocupa casi todo el ancho.
 const LINE_OFFSETS = [
-  { mobile: "0vw", desktop: "0vw" },
-  { mobile: "14vw", desktop: "67vw" },
-  { mobile: "5vw", desktop: "30vw" },
-  { mobile: "20vw", desktop: "75vw" },
-  { mobile: "6vw", desktop: "32vw" },
+  { mobile: "13vw", desktop: "10vw" },
+  { mobile: "25vw", desktop: "56vw" },
+  { mobile: "17vw", desktop: "24vw" },
+  { mobile: "30vw", desktop: "62vw" },
+  { mobile: "8vw", desktop: "26vw" },
 ];
 
 export default function Declaracion() {
