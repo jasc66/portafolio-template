@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { archivo } from "@/data/site";
+import { archivo, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Sobre mí | Alonso Salguero Ceballos",
@@ -13,7 +12,12 @@ export const metadata: Metadata = {
 export default function ArchivoIndice() {
   return (
     <>
-      <Header />
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 text-[11px] uppercase tracking-wider md:px-10">
+        <Link href="/" className="underline-link font-mono font-medium text-ink hover:text-accent">
+          <span aria-hidden="true">←</span> Inicio
+        </Link>
+        <p className="font-mono text-ink-dim">{site.name}</p>
+      </header>
       <main id="main-content" className="min-h-svh px-6 pt-32 pb-24 md:px-10">
         <h1 className="font-display text-5xl uppercase text-ink md:text-7xl">
           Sobre mí
