@@ -4,8 +4,7 @@ import { useEffect, useRef } from "react";
 
 // Motor de ruido tipo Perlin (implementación propia y ligera, sin dependencias)
 // que dibuja una grilla de celdas ASCII y "enciende" celdas en el color de acento
-// cuando el ruido supera un umbral. Réplica del fondo generativo del sitio de
-// referencia, adaptada aquí a Canvas 2D puro.
+// cuando el ruido supera un umbral. Fondo generativo en Canvas 2D puro.
 function createNoise() {
   const perm = new Uint8Array(512);
   const p = new Uint8Array(256);
@@ -80,8 +79,6 @@ function createNoise() {
 }
 
 const RAMPA = " .,:;-=+*#%@";
-const COLOR_ACENTO = "#a3bdec";
-const COLOR_FONDO = "#f4f1ea";
 
 export default function BackgroundAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,6 +88,13 @@ export default function BackgroundAnimation() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    // Colores leídos de las CSS custom properties (definidas en globals.css)
+    // en vez de hardcodeados, para que el canvas siga la paleta del proyecto
+    // si esta cambia.
+    const rootStyles = getComputedStyle(document.documentElement);
+    const COLOR_ACENTO = rootStyles.getPropertyValue("--accent-soft").trim() || "#a3bdec";
+    const COLOR_FONDO = rootStyles.getPropertyValue("--bg").trim() || "#f4f1ea";
 
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"

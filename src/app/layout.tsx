@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Bebas_Neue, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
+import Preloader from "@/components/Preloader";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-mono",
@@ -9,10 +11,22 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-poster",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Nombre Apellido | Diseño hacia la memoria",
+  title: "Alonso Salguero Ceballos | Desarrollador Fullstack & Accesibilidad Web",
   description:
-    "Plantilla editorial para portafolio personal: pedagogía, investigación y diseño de acciones territoriales.",
+    "Portafolio de Alonso Salguero Ceballos: desarrollador fullstack especializado en React, Next.js y accesibilidad WCAG 2.2 AA. Herramientas open source, proyectos institucionales y freelance.",
 };
 
 export default function RootLayout({
@@ -22,13 +36,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${plexMono.variable} antialiased`}>
+      <body
+        className={`${plexMono.variable} ${spaceGrotesk.variable} ${bebasNeue.variable} antialiased`}
+      >
         <a
           href="#main-content"
           className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-bg focus-visible:px-4 focus-visible:py-2 focus-visible:text-ink"
         >
           Saltar al contenido principal
         </a>
+        <Preloader />
+        <SmoothScroll />
         <BackgroundAnimation />
         {children}
       </body>

@@ -46,12 +46,12 @@ export default function Header() {
         className="flex items-center gap-6"
       >
         <a
-          href={site.social.instagram}
+          href={site.social.github}
           target="_blank"
           rel="noopener noreferrer"
           className="underline-link text-ink transition-colors hover:text-ink-dim"
         >
-          Instagram
+          GitHub
         </a>
         <a
           href={`mailto:${site.email}`}

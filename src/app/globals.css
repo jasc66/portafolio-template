@@ -8,6 +8,9 @@
   --line: #1a1714;
   --accent: #1d3a8f;
   --accent-on-dark: #5b8cff;
+  /* Variante clara del acento, usada por el fondo ASCII (BackgroundAnimation)
+     para que las celdas "encendidas" se lean sobre --bg sin perder contraste. */
+  --accent-soft: #a3bdec;
 }
 
 @theme inline {
@@ -18,8 +21,9 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-on-dark: var(--accent-on-dark);
-  --font-display: var(--font-mono);
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
+  --font-poster: var(--font-poster);
 }
 
 @layer base {

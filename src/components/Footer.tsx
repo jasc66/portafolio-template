@@ -9,20 +9,20 @@ export default function Footer() {
           className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.08em] text-ink-dim"
         >
           <a
-            href={site.social.linktree}
+            href={site.social.github}
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-ink"
           >
-            Linktree
+            GitHub
           </a>
           <a
-            href={site.social.instagram}
+            href={site.social.npm}
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-ink"
           >
-            Instagram
+            npm
           </a>
           <a
             href={site.social.linkedin}
@@ -34,6 +34,8 @@ export default function Footer() {
           </a>
           <a
             href={site.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-ink"
           >
             CV
