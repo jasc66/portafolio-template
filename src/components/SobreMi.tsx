@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { sobreMi } from "@/data/site";
 
+// Delay escalonado por letra (ms) para que el color se propague letra por
+// letra en vez de cambiar todo el bloque a la vez.
+const LETTER_STEP_MS = 30;
+
 export default function SobreMi() {
+  const letters = sobreMi.heading.split("");
+
   return (
     <section
       id="sobre-mi"
@@ -15,8 +21,18 @@ export default function SobreMi() {
         <h2 className="mb-6 font-mono text-xs uppercase tracking-[0.08em] text-ink-dim transition-colors group-hover:text-ink">
           Consulta {sobreMi.heading}
         </h2>
-        <span className="font-poster text-[20vw] uppercase leading-[0.8] tracking-wide text-ink-dim transition-colors duration-300 group-hover:text-ink md:text-[12vw]">
-          {sobreMi.heading}
+        <span className="font-poster text-[20vw] uppercase leading-[0.8] tracking-wide text-ink-dim md:text-[12vw]">
+          {letters.map((letter, i) => (
+            <span
+              key={i}
+              aria-hidden="true"
+              style={{ transitionDelay: `${i * LETTER_STEP_MS}ms` }}
+              className="inline-block transition-colors duration-200 group-hover:text-ink"
+            >
+              {letter === " " ? " " : letter}
+            </span>
+          ))}
+          <span className="sr-only">{sobreMi.heading}</span>
         </span>
 
         {/* Figura decorativa: rombo que gira e invierte color en hover */}

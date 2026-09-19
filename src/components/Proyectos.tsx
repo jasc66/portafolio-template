@@ -11,7 +11,7 @@ export default function Proyectos() {
         </h2>
         <div className="grid gap-16 md:grid-cols-2">
           <div>
-            <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-white/70">
+            <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-[#d6d2cc]">
               Herramientas open source
             </h3>
             <ul className="flex flex-col gap-3">
@@ -30,7 +30,7 @@ export default function Proyectos() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-white/70">
+            <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-[#d6d2cc]">
               En producción
             </h3>
             <ul className="flex flex-col gap-3">

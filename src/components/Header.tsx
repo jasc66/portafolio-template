@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header
       inert={!visible}
-      className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 text-[11px] uppercase tracking-wider transition-opacity duration-300 md:px-10 ${
+      className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-line/15 bg-bg/90 px-6 py-3 text-[11px] uppercase tracking-wider backdrop-blur-sm transition-opacity duration-300 md:px-10 ${
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -37,7 +37,7 @@ export default function Header() {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
-        className="font-mono font-medium text-ink"
+        className="flex min-h-[24px] items-center font-mono font-medium text-ink"
       >
         {site.name}
       </a>
@@ -49,13 +49,13 @@ export default function Header() {
           href={site.social.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-link text-ink transition-colors hover:text-ink-dim"
+          className="underline-link flex min-h-[24px] items-center text-ink transition-colors hover:text-ink-dim"
         >
           GitHub
         </a>
         <a
           href={`mailto:${site.email}`}
-          className="underline-link text-ink transition-colors hover:text-ink-dim"
+          className="underline-link flex min-h-[24px] items-center text-ink transition-colors hover:text-ink-dim"
         >
           Contacto
         </a>
@@ -63,7 +63,7 @@ export default function Header() {
           href={site.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-link text-ink transition-colors hover:text-ink-dim"
+          className="underline-link flex min-h-[24px] items-center text-ink transition-colors hover:text-ink-dim"
         >
           LinkedIn
         </a>

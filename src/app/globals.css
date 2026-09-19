@@ -11,6 +11,13 @@
   /* Variante clara del acento, usada por el fondo ASCII (BackgroundAnimation)
      para que las celdas "encendidas" se lean sobre --bg sin perder contraste. */
   --accent-soft: #a3bdec;
+  /* Anillo de foco. --focus-ring sobre fondo claro (#1d3a8f sobre #f4f1ea ≈ 9.4:1);
+     --focus-ring-on-dark sobre fondo oscuro. El halo separa el anillo del
+     contenido adyacente para que nunca quede "oculto" (WCAG 2.4.11). */
+  --focus-ring: #1d3a8f;
+  --focus-ring-halo: rgba(244, 241, 234, 0.95);
+  --focus-ring-on-dark: #9dc0ff;
+  --focus-ring-halo-on-dark: rgba(26, 23, 20, 0.95);
 }
 
 @theme inline {
@@ -31,9 +38,21 @@
     border-color: var(--line);
   }
 
+  /* Indicador de foco: color propio (no currentColor) para que el contraste
+     no dependa del color del texto, y sombra de contorno inverso para que se
+     lea tanto sobre --bg como sobre --bg-raised (WCAG 2.4.7 / 2.4.13). */
   :focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 5px var(--focus-ring-halo);
+  }
+
+  /* Sobre superficies oscuras el anillo cambia a la variante clara. */
+  .bg-bg-raised :focus-visible,
+  [data-surface="dark"] :focus-visible {
+    outline-color: var(--focus-ring-on-dark);
+    box-shadow: 0 0 0 5px var(--focus-ring-halo-on-dark);
   }
 }
 

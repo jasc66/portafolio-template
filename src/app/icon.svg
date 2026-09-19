@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Marca del sitio (ver BrandMark.tsx): cuadro con borde + inicial.
+       La "A" va como path y no como <text> para no depender de las fuentes
+       del visitante, y el trazo es más grueso que en BrandMark para que
+       siga leyéndose a 16px en la pestaña. -->
+  <rect width="32" height="32" rx="3" fill="#f4f1ea"/>
+  <rect x="2.5" y="2.5" width="27" height="27" rx="2" fill="none" stroke="#1a1714" stroke-width="3"/>
+  <path d="M10.3 23.5 14.9 9h2.2l4.6 14.5h-3.3l-.9-3.2h-3.1l-.9 3.2zM15.2 17.8h1.6L16 14.6z"
+        fill="#1a1714"/>
+</svg>
