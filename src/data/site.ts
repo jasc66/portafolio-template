@@ -83,6 +83,7 @@ export const proyectos = {
     { label: "Reconstrucción integral DGSC — en desarrollo, diciembre 2026", href: "#" },
     { label: "CMS headless institucional DGSC — en producción", href: "#" },
     { label: "Sitio Restaurante De La Finca — en producción", href: "https://de-lafinca.com" },
+    { label: "Habla Conmigo Spanish School — en producción", href: "https://www.habla-conmigo.com" },
   ],
 };
 
@@ -209,6 +210,14 @@ export const archivo: ArchivoGrupo[] = [
         description:
           "Sitio completo con panel de administración de menú e imágenes, multiidioma ES/EN, carrusel, integración con Google Maps, formulario de contacto, reseñas y galería. Autenticación y base de datos con Supabase.",
         href: "https://de-lafinca.com",
+      },
+      {
+        title: "Habla Conmigo Spanish School",
+        status: "En producción · Freelance",
+        stack: "Next.js 16 · React 19 · Tailwind 4 · Resend",
+        description:
+          "Sitio con dominio propio para una escuela de español en línea dirigida por una profesora costarricense nativa. Presenta cuatro modalidades de clase — privadas, grupales y dos paquetes de inmersión con hospedaje en Costa Rica — con precios conmutables entre sesión y mensualidad, testimonios, FAQ, modo claro/oscuro y formulario de contacto que entrega las consultas por correo vía Resend.",
+        href: "https://www.habla-conmigo.com",
       },
     ],
   },
