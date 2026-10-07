@@ -224,7 +224,7 @@ export const archivo: ArchivoGrupo[] = [
         status: "En producción · Freelance",
         stack: "Next.js · Drizzle · Postgres (Supabase) · TOTP · Google Places",
         description:
-          "Sitio bilingüe ES/EN con menú por categorías exportable a PDF, galería editorial, reseñas reales de Google y reservas por WhatsApp validadas en hora de Costa Rica. Panel de administración propio con doble factor (TOTP), sesiones revocables y límite de intentos en Postgres. Auditado en 2026: CSP sin unsafe-eval, datos estructurados, imágenes renderizadas en el servidor y 36 dependencias sin uso eliminadas.",
+          "Sitio bilingüe ES/EN con menú por categorías exportable a PDF, galería editorial, reseñas reales de Google y reservas por WhatsApp validadas en hora de Costa Rica, que quedan registradas en un panel para confirmarlas o cancelarlas. Panel de administración propio con doble factor (TOTP), sesiones revocables y límite de intentos en Postgres. Auditado en 2026: CSP sin unsafe-eval, datos estructurados, imágenes renderizadas en el servidor y 36 dependencias sin uso eliminadas.",
         href: "https://de-lafinca.com",
       },
       {
