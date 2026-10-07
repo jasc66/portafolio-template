@@ -81,7 +81,7 @@ export const proyectos = {
   ],
   produccion: [
     { label: "Reconstrucción integral DGSC — en desarrollo, diciembre 2026", href: "#" },
-    { label: "CMS headless institucional DGSC — en producción", href: "#" },
+    { label: "CMS headless institucional DGSC — pendiente de publicación", href: "#" },
     { label: "Sitio Restaurante De La Finca — en producción", href: "https://de-lafinca.com" },
     { label: "Habla Conmigo Spanish School — en producción", href: "https://www.habla-conmigo.com" },
   ],
@@ -128,10 +128,10 @@ export const archivo: ArchivoGrupo[] = [
       },
       {
         title: "CMS Headless Institucional DGSC",
-        status: "En producción",
+        status: "Pendiente de publicación",
         stack: "React · Next.js · TypeScript · Tailwind · MySQL",
         description:
-          "Sistema headless de gestión de contenidos con WCAG 2.2 AA, SEO técnico y arquitectura fullstack propia — 18 colecciones de contenido, en producción en el portal oficial del Servicio Civil de Costa Rica.",
+          "Sistema headless de gestión de contenidos con WCAG 2.2 AA, SEO técnico y arquitectura fullstack propia — 18 colecciones de contenido que alimentarán la reconstrucción integral del portal oficial del Servicio Civil de Costa Rica. Pendiente de publicación.",
       },
     ],
   },
@@ -298,7 +298,7 @@ export const sobreMi = {
   paragraphs: [
     "Desarrollador fullstack con más de 18 años de experiencia en TI del sector público costarricense, especializado en React, Next.js, Node.js, PHP/MySQL y accesibilidad digital (WCAG 2.2 AA). Licenciatura en Ingeniería Informática (Gerencia Informática) en curso, sobre una base de Bachillerato en Ingeniería de Sistemas y formación previa en Informática Educativa.",
     "Autor de tres herramientas open source publicadas en npm: wcag-agent, agente de auditoría de accesibilidad para asistentes de IA (Claude Code, Cursor, Copilot, Windsurf y más); @jalonsc66/a11y-ci, que lleva esa misma auditoría al pipeline de CI/CD; y scroll-flyover, un skill de Claude Code para construir experiencias 3D de scroll con Three.js sin costo de generación por build.",
-    "Actualmente en la Dirección General del Servicio Civil (DGSC), donde lidero la accesibilidad WCAG 2.2 AA del sitio institucional y su reconstrucción integral rumbo a diciembre de 2026, además de haber desarrollado el CMS headless institucional propio con 18 colecciones de contenido. Antes, 15 años en el Ministerio de Agricultura y Ganadería diseñando sistemas institucionales de principio a fin.",
+    "Actualmente en la Dirección General del Servicio Civil (DGSC), donde lidero la accesibilidad WCAG 2.2 AA del sitio institucional y su reconstrucción integral rumbo a diciembre de 2026, además de desarrollar el CMS headless institucional propio, con 18 colecciones de contenido, que alimentará el sitio nuevo. Antes, 15 años en el Ministerio de Agricultura y Ganadería diseñando sistemas institucionales de principio a fin.",
     "En paralelo, desarrollo producto propio y para clientes: un ecosistema de agentes de IA (conversacionales, de clasificación de hallazgos y de generación automática de tareas), asistentes con RAG multi-modelo, plataformas SaaS y sitios para negocios.",
   ],
 };

@@ -31,19 +31,26 @@ export default function Proyectos() {
           </div>
           <div>
             <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-[#d6d2cc]">
-              En producción
+              Institucional y clientes
             </h3>
             <ul className="flex flex-col gap-3">
               {proyectos.produccion.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="underline-link text-lg text-white transition-colors hover:text-accent-on-dark"
-                  >
-                    {item.label}
-                  </a>
+                  {/* Sin URL pública (href "#") se muestra como texto: un
+                      enlace que no lleva a ningún lado confunde al lector
+                      de pantalla y al teclado. */}
+                  {item.href === "#" ? (
+                    <span className="text-lg text-white">{item.label}</span>
+                  ) : (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="underline-link text-lg text-white transition-colors hover:text-accent-on-dark"
+                    >
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
