@@ -197,6 +197,22 @@ export const archivo: ArchivoGrupo[] = [
           "Asistentes conversacionales con RAG sobre bases de conocimiento de trámites y normativa. Arquitectura multi-modelo con conmutación automática entre tres proveedores de IA para evitar puntos únicos de falla. Panel administrativo con registro de auditoría y carga de documentos que se convierten en base de conocimiento sin reentrenamiento manual.",
       },
       {
+        title: "King Kong Barber — SaaS de reservas para barberías",
+        status: "En producción · en desarrollo activo (fase 4 de 6)",
+        stack: "Next.js 15 · Prisma 7 · Neon Postgres · NextAuth v5 · PWA",
+        description:
+          "De sitio de reservas de una barbería a plataforma multi-tenant: cada negocio con su subdominio, marca y agenda, alta self-service con 14 días de prueba y panel de plataforma con auditoría. Reservas validadas en la zona horaria del negocio y sin choques gracias a una restricción de exclusión en Postgres; recordatorios por correo y push, reprogramación, ausencias y PWA sin conexión.",
+        href: "https://king-kong-barber.vercel.app/plataforma",
+      },
+      {
+        title: "Post JASC — POS con Facturación Electrónica",
+        status: "En desarrollo activo",
+        stack: "Next.js 15 · Prisma 6 · Neon Postgres · Hacienda v4.4",
+        description:
+          "Punto de venta y facturación electrónica para Costa Rica: facturas, tiquetes, notas de crédito y débito, proformas, cuentas por cobrar y cierre por caja. XML validado contra los XSD oficiales de Hacienda, envío desde una cola con reintentos, credenciales cifradas con AES-256-GCM y aislamiento por empresa; CI con migraciones sobre Postgres vacío y más de 50 archivos de pruebas.",
+        href: "https://post-jasc.vercel.app/login",
+      },
+      {
         title: "Las Aventuras de Noah — Juego Educativo",
         status: "Web · iOS (Capacitor)",
         stack: "Playwright / WebKit",
@@ -206,17 +222,17 @@ export const archivo: ArchivoGrupo[] = [
       {
         title: "Sitio Web Restaurante De La Finca",
         status: "En producción · Freelance",
-        stack: "Next.js · Supabase · Framer Motion",
+        stack: "Next.js · Drizzle · Postgres (Supabase) · TOTP · Google Places",
         description:
-          "Sitio completo con panel de administración de menú e imágenes, multiidioma ES/EN, carrusel, integración con Google Maps, formulario de contacto, reseñas y galería. Autenticación y base de datos con Supabase.",
+          "Sitio bilingüe ES/EN con menú por categorías exportable a PDF, galería editorial, reseñas reales de Google y reservas por WhatsApp validadas en hora de Costa Rica. Panel de administración propio con doble factor (TOTP), sesiones revocables y límite de intentos en Postgres. Auditado en 2026: CSP sin unsafe-eval, datos estructurados, imágenes renderizadas en el servidor y 36 dependencias sin uso eliminadas.",
         href: "https://de-lafinca.com",
       },
       {
         title: "Habla Conmigo Spanish School",
         status: "En producción · Freelance",
-        stack: "Next.js 16 · React 19 · Tailwind 4 · Resend",
+        stack: "Next.js 16 · React 19 · Tailwind 4 · Neon Postgres · Resend",
         description:
-          "Sitio con dominio propio para una escuela de español en línea dirigida por una profesora costarricense nativa. Presenta cuatro modalidades de clase — privadas, grupales y dos paquetes de inmersión con hospedaje en Costa Rica — con precios conmutables entre sesión y mensualidad, testimonios, FAQ, modo claro/oscuro y formulario de contacto que entrega las consultas por correo vía Resend.",
+          "Sitio con dominio propio para una escuela de español, presencial en Costa Rica y en línea. El catálogo de clases y sus precios se leen desde Postgres (Neon) con respaldo estático si la base falla; incluye cuatro opciones de alojamiento para la inmersión y reservas que convierten el horario a la zona del estudiante. En desarrollo: un panel /admin con login por código al correo para que la clienta edite video, cifras, clases, precios y fotos.",
         href: "https://www.habla-conmigo.com",
       },
     ],
